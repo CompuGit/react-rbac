@@ -15,11 +15,11 @@ A comprehensive Role-Based Access Control (RBAC) library for React applications 
 ## Installation
 
 \`\`\`bash
-npm install @your-username/react-rbac
+npm install @compugit/react-rbac
 # or
-yarn add @your-username/react-rbac
+yarn add @compugit/react-rbac
 # or
-pnpm add @your-username/react-rbac
+pnpm add @compugit/react-rbac
 \`\`\`
 
 ## Quick Start
@@ -27,7 +27,7 @@ pnpm add @your-username/react-rbac
 ### 1. Wrap your app with RBACProvider
 
 \`\`\`tsx
-import { RBACProvider } from '@your-username/react-rbac'
+import { RBACProvider } from '@compugit/react-rbac'
 
 const loadUser = async () => {
   const response = await fetch('/api/user')
@@ -46,7 +46,7 @@ function App() {
 ### 2. Use protected components
 
 \`\`\`tsx
-import { ProtectedRoute, ProtectedElement, useRBAC } from '@your-username/react-rbac'
+import { ProtectedRoute, ProtectedElement, useRBAC } from '@compugit/react-rbac'
 
 function Dashboard() {
   const { hasPermission, hasRole } = useRBAC()
@@ -86,7 +86,7 @@ function App() {
 ### 3. Use authorization hooks
 
 \`\`\`tsx
-import { useRBAC, useAuth } from '@your-username/react-rbac'
+import { useRBAC, useAuth } from '@compugit/react-rbac'
 
 function MyComponent() {
   const { 
