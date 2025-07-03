@@ -3,8 +3,10 @@ import commonjs from "@rollup/plugin-commonjs"
 import typescript from "@rollup/plugin-typescript"
 import peerDepsExternal from "rollup-plugin-peer-deps-external"
 import { dts } from "rollup-plugin-dts"
+import { readFileSync } from "fs"
 
-const packageJson = require("./package.json")
+// Read package.json as JSON
+const packageJson = JSON.parse(readFileSync("./package.json", "utf8"))
 
 export default [
   {
@@ -14,6 +16,7 @@ export default [
         file: packageJson.main,
         format: "cjs",
         sourcemap: true,
+        exports: "named",
       },
       {
         file: packageJson.module,
@@ -35,9 +38,9 @@ export default [
     external: ["react", "react-dom"],
   },
   {
-    input: "dist/index.d.ts",
+    input: "src/index.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
-    external: [/\.css$/],
+    external: [/\.css$/, "react", "react-dom"],
   },
 ]
