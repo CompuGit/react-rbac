@@ -1,0 +1,37 @@
+# Source files
+src/
+.github/
+docs/
+
+# Development files
+.eslintrc.js
+rollup.config.js
+tsconfig.json
+.gitignore
+
+# Development dependencies
+node_modules/
+coverage/
+.nyc_output
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env*
+
+# Temporary
+tmp/
+temp/
